@@ -1,0 +1,13 @@
+function [Xp, y] = myfun(X, u)
+
+m = 0.1; %en kg
+l = 0.1; % en m
+J = m*l^2;
+g = 9.8;
+c = 0.01;
+
+Xp = [X(2,1); 
+      (1/J)*(u+m*g*l*sin(X(1,1))-c*sign(X(2,1))*X(2,1))];
+
+y = [X(1,1)];
+
